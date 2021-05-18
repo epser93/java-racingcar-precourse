@@ -15,4 +15,10 @@ public class InputView {
         };
         return carList;
     }
+
+    public int getTrialCnt(Scanner scanner) {
+        System.out.println("시도할 회수는 몇회인가요?");
+        int cnt = scanner.nextInt();
+        return cnt;
+    }
 }

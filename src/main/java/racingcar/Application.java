@@ -12,5 +12,7 @@ public class Application {
         InputView inputview = new InputView();
 
         List<Car> carList = inputview.getCarNames(scanner);
+        int trialCnt = inputview.getTrialCnt(scanner);
+
     }
 }
