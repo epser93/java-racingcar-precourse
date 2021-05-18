@@ -13,7 +13,7 @@ public class GameSystem {
     final static private int END_RANDOM_NUM = 10;
 
     public static List<Car> makeCarList(String[] splittedCarString) {
-        List<Car> carList = new ArrayList();
+        List<Car> carList = new ArrayList<Car>();
         for (String carName : splittedCarString) {
             carList.add(new Car(carName));
         }
