@@ -22,18 +22,18 @@ public class Car {
     }
 
     public String getDashPosition() {
-        String pos = "";
+        StringBuilder pos = new StringBuilder();
         for (int i = 0; i < position; i++) {
-            pos += "-";
+            pos.append("-");
         }
-        return pos;
+        return pos.toString();
     }
 
     public int getIntPosition() {
         return position;
     }
 
-    public static void validateName(String carName) {
+    public void validateName(String carName) {
         if (carName.length() == 0) {
             throw new IllegalArgumentException("[ERROR]: 길이가 0인 이름은 불가");
         }
