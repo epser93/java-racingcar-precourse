@@ -5,6 +5,8 @@ public class Car {
     private final String name;
     private int position = 0;
 
+    private final static int MAX_LENGTH_OF_CAR_NAME = 5;
+
     public Car(String name) {
         validateName(name);
         this.name = name;
@@ -35,7 +37,7 @@ public class Car {
         if (carName.length() == 0) {
             throw new IllegalArgumentException("[ERROR]: 길이가 0인 이름은 불가");
         }
-        else if (carName.length() > 5) {
+        else if (carName.length() > MAX_LENGTH_OF_CAR_NAME) {
             throw new IllegalArgumentException("[ERROR]: 길이가 5이상인 이름은 불가");
         }
         else if (carName == null) {

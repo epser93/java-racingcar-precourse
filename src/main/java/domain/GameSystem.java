@@ -9,8 +9,9 @@ import view.OutputView;
 
 public class GameSystem {
 
-    final static private int START_RANDOM_NUM = 0;
-    final static private int END_RANDOM_NUM = 10;
+    private final static int START_RANDOM_NUM = 0;
+    private final static int END_RANDOM_NUM = 10;
+    private final static int GO_MEASURE = 4;
 
     public static List<Car> makeCarList(String[] splittedCarString) {
         List<Car> carList = new ArrayList<Car>();
@@ -21,7 +22,7 @@ public class GameSystem {
     }
 
     public static void calculatePosition(Car car) {
-        if (RandomUtils.nextInt(START_RANDOM_NUM, END_RANDOM_NUM) >= 4) {
+        if (RandomUtils.nextInt(START_RANDOM_NUM, END_RANDOM_NUM) >= GO_MEASURE) {
             car.addPosition();
         }
     }
