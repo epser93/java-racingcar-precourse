@@ -35,7 +35,7 @@ public class Car {
         return position;
     }
 
-    public void validateName(String carName) {
+    private void validateName(String carName) {
         if (Objects.isNull(carName)) {
             throw new IllegalArgumentException("[ERROR]: 자동차를 제대로 입력해주세요");
         }

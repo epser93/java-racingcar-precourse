@@ -13,7 +13,7 @@ public class GameSystem {
     private final static int END_RANDOM_NUM = 10;
     private final static int GO_MEASURE = 4;
 
-    public static List<Car> makeCarList(String[] splittedCarString) {
+    private static List<Car> makeCarList(String[] splittedCarString) {
         List<Car> carList = new ArrayList<Car>();
         for (String carName : splittedCarString) {
             carList.add(new Car(carName));
@@ -21,13 +21,13 @@ public class GameSystem {
         return carList;
     }
 
-    public static void calculatePosition(Car car) {
+    private static void calculatePosition(Car car) {
         if (RandomUtils.nextInt(START_RANDOM_NUM, END_RANDOM_NUM) >= GO_MEASURE) {
             car.addPosition();
         }
     }
 
-    public static String getWinners(List<Car> carList) {
+    private static String getWinners(List<Car> carList) {
         List<String> winnerList = new ArrayList<String>();
         int maxPos = -1;
         for (Car car : carList) {
@@ -54,7 +54,7 @@ public class GameSystem {
         OutputView.printWinner(getWinners(carList));
     }
 
-    public static void playOne(List<Car> carList) {
+    private static void playOne(List<Car> carList) {
         for (Car car : carList) {
             calculatePosition(car);
             OutputView.printResultOne(car);
