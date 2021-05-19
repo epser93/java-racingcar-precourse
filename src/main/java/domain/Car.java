@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Car {
 
     private final String name;
@@ -34,14 +36,14 @@ public class Car {
     }
 
     public void validateName(String carName) {
+        if (Objects.isNull(carName)) {
+            throw new IllegalArgumentException("[ERROR]: 자동차를 제대로 입력해주세요");
+        }
         if (carName.length() == 0) {
             throw new IllegalArgumentException("[ERROR]: 길이가 0인 이름은 불가");
         }
-        else if (carName.length() > MAX_LENGTH_OF_CAR_NAME) {
+        if (carName.length() > MAX_LENGTH_OF_CAR_NAME) {
             throw new IllegalArgumentException("[ERROR]: 길이가 5이상인 이름은 불가");
-        }
-        else if (carName == null) {
-            throw new IllegalArgumentException("[ERROR]: 자동차를 제대로 입력해주세요");
         }
     }
 }
