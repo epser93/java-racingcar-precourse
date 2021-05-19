@@ -6,6 +6,7 @@ public class Car {
     private int position = 0;
 
     public Car(String name) {
+        validateName(name);
         this.name = name;
     }
 
@@ -36,6 +37,9 @@ public class Car {
         }
         else if (carName.length() > 5) {
             throw new IllegalArgumentException("[ERROR]: 길이가 5이상인 이름은 불가");
+        }
+        else if (carName == null) {
+            throw new IllegalArgumentException("[ERROR]: 자동차를 제대로 입력해주세요");
         }
     }
 }
