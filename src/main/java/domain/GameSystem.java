@@ -45,10 +45,20 @@ public class GameSystem {
 
     public static void play(Scanner scanner) {
         InputView inputview = new InputView();
-        OutputView outputView = new OutputView();
         List<Car> carList = inputview.getCarNames(scanner);
         int trialCnt = inputview.getTrialCnt(scanner);
-        outputView.printResult(carList, trialCnt);
+        System.out.println("실행결과");
+        for (int i = 0; i < trialCnt; i++) {
+            playOne(carList);
+        }
+        OutputView.printWinner(getWinners(carList));
     }
 
+    public static void playOne(List<Car> carList) {
+        for (Car car : carList) {
+            calculatePosition(car);
+            OutputView.printResultOne(car);
+        }
+        System.out.println();
+    }
 }
