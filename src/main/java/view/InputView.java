@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 public class InputView {
 
-    public List<Car> getCarNames(Scanner scanner) {
+    public String[] getCarNames(Scanner scanner) {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String[] cars = scanner.nextLine().split(",");
         if (cars.length == 0) {
             throw new IllegalArgumentException("자동차를 제대로 입력해주세요!");
         }
-        return GameSystem.makeCarList(cars);
+        return cars;
     }
 
     public int getTrialCnt(Scanner scanner) {

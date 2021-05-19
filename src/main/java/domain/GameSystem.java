@@ -45,7 +45,7 @@ public class GameSystem {
 
     public static void play(Scanner scanner) {
         InputView inputview = new InputView();
-        List<Car> carList = inputview.getCarNames(scanner);
+        List<Car> carList = makeCarList(inputview.getCarNames(scanner));
         int trialCnt = inputview.getTrialCnt(scanner);
         System.out.println("실행결과");
         for (int i = 0; i < trialCnt; i++) {
